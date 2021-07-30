@@ -1,21 +1,12 @@
-// Create arary image and put in var 
-var images=['img1.jpg','img2.png','img3.jpg','img4.png'];
-// var start zero because arary start from 0  
-var i=0;
-
-function imageRandom() {
-    // get image and put picture in src 
-    document.imgHome.src=images[i];
-    // condition for imges and repeat when var arrive length -1 
-    if (i < images.length -1 ) {
-        i++;
-    } else {
-        i=0;
-    }
-    setTimeout("imageRandom()",2000)
+var heading=document.getElementsByClassName('accordion');
+for (let i = 0; i < heading.length; i++) {
+    heading[i].addEventListener('click',function () {
+        this.classList.toggle('active');
+       var desc=this.nextElementSibling;
+        if (desc.style.maxHeight) {
+           desc.style.maxHeight = null
+       } else {
+        desc.style.maxHeight=desc.scrollHeight +"px";
+       }
+    })  
 }
-//Trigger function
-imageRandom();
-
-
-
