@@ -7,36 +7,51 @@
     margin:20px auto;
     width: 85%;
 }
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 /* Start accordion  */
-.accordion{
-    width: 100%;
-    outline: 0;
-    border: 0;
-    padding: 10px;
-    text-align: left;
-    margin-bottom: 2px;
+img{
+    width: 50%;
     cursor: pointer;
-    font-size: 20px;
 }
-.accordion::after{
-    content: '\002b';
-    float: right;
-    color: #777;
+.modal{
+    background-color: rgba(0, 0, 0, 0.336);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
 }
-.active::after{
-    content: '\2212';
+.modal img{
+    width: 80%; 
+    margin-top: 40px;
 }
-.accordion:hover{
-    background-color: #CCC;
+.modal .close{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    color: #FFF;
+    font-size: 28px;
+    cursor: pointer;
 }
-.desc{
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.3s;
+.modal .desc{
+    position: absolute;
+    bottom: 40px;
+    left: 50%; 
+    color: #FFF;
 }
-.desc p{
-    font-weight: bold;
-    font-size: 18px;
-    color: #777;
-    margin: 10px;
+    .modal img,
+    .modal .desc{
+        animation: zoom .3s;
+    }
+@keyframes zoom {
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
 }
