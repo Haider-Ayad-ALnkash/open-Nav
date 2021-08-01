@@ -1,21 +1,13 @@
 // Get All vars 
-var orginalImage=document.querySelector('img'),
-    modal=document.querySelector(".modal"),
-    btoClose=document.querySelector(".close"),
-    textDesc=document.querySelector(".desc");
+   var modal=document.querySelector(".modal"),
+    open=document.querySelector(".open"),
+       btoClose=document.querySelector(".close");
 // When click on original image popUp show Image and add description      
-orginalImage.onclick=function () {
-    modal.style.display = "block";
-    showImage.src=this.src;
-    textDesc.innerHTML=this.alt;
+function openDiv() {
+    modal.style.transform="scale(1)";
+    open.style.top="-44px"; 
 }
-// btn close show image and hide overlay
-btoClose.addEventListener("click",function () {
-    modal.style.display = "none";
-})
-//enter btn ESC close image popup
-document.onkeydown=(e)=>{
-    if (e.keyCode =="27") {
-        modal.style.display = "none"; 
-    }
+function closeDiv() {
+    modal.style.transform="scale(0)"; 
+    open.style.top="0px"; 
 }
